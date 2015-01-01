@@ -1,5 +1,6 @@
-from Tkinter import Tk, Frame, BOTH
-from ttk import Frame, Button, Style
+from Tkinter import Tk, Frame, BOTH #To Hangle Frameing
+from ttk import Frame, Button, Style #To handle Window, Theming and Buttons
+from PIL import Image, ImageTk #To handle Images, SOMETHING WRONG HERE
 
 import datetime
 time = datetime.datetime.now()
@@ -15,24 +16,25 @@ class Example(Frame):
         
     def initUI(self):
       
-        self.parent.title("Quit button")
+        self.parent.title("Buttons")
         self.style = Style()
         self.style.theme_use("default")
-
+        
         self.pack(fill=BOTH, expand=1)
-
-        quitButton = Button(self, text="Quit",
-            command=self.quit)
-        quitButton.place(x=50, y=50)
-
+        
+        closeButton = Button(self, text="Close")
+        closeButton.pack(padx=5, pady=30)
+        okButton = Button(self, text="OK")
+        okButton.pack()
 
 def main():
-  
+
     root = Tk()
     root.geometry("250x150+300+300")
     app = Example(root)
     root.mainloop()  
 
+	
 
 if __name__ == '__main__':
     main()  
