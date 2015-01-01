@@ -1,16 +1,42 @@
-import Tkinter
-top = Tkinter.Tk()
-# Code to add widgets will go here...
-top.mainloop()
-
-try:
-    import wx
-except ImportError:
-    raise ImportError,"The wxPython module is required to run this program."
+from Tkinter import Tk, Frame, BOTH
+from ttk import Frame, Button, Style
 
 import datetime
 time = datetime.datetime.now()
- 
+
+class Example(Frame):
+  
+    def __init__(self, parent):
+        Frame.__init__(self, parent)   
+         
+        self.parent = parent
+        
+        self.initUI()
+        
+    def initUI(self):
+      
+        self.parent.title("Quit button")
+        self.style = Style()
+        self.style.theme_use("default")
+
+        self.pack(fill=BOTH, expand=1)
+
+        quitButton = Button(self, text="Quit",
+            command=self.quit)
+        quitButton.place(x=50, y=50)
+
+
+def main():
+  
+    root = Tk()
+    root.geometry("250x150+300+300")
+    app = Example(root)
+    root.mainloop()  
+
+
+if __name__ == '__main__':
+    main()  
+
 print
 print
 print 
