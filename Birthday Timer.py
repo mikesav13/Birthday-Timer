@@ -1,3 +1,13 @@
+import Tkinter
+top = Tkinter.Tk()
+# Code to add widgets will go here...
+top.mainloop()
+
+try:
+    import wx
+except ImportError:
+    raise ImportError,"The wxPython module is required to run this program."
+
 import datetime
 time = datetime.datetime.now()
  
