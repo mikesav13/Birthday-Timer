@@ -13,7 +13,7 @@ print
 print
 print
 
-while True:
+while True && daysL != -1:
 
 	dt  = datetime.datetime
 	now = dt.now()
